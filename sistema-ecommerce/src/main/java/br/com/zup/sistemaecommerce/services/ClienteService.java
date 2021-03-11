@@ -1,4 +1,5 @@
 package br.com.zup.sistemaecommerce.services;
+import br.com.zup.sistemaecommerce.exceptions.ExcecaoClienteDuplicado;
 import br.com.zup.sistemaecommerce.exceptions.ExcecaoClienteNaoEncontrado;
 import br.com.zup.sistemaecommerce.models.Cliente;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,8 @@ public class ClienteService {
             listaClientes.add(cliente);
             return cliente;
         }
-        throw new RuntimeException("Cliente já cadastrado com o CPF "+cliente.getCpf());
+        throw new ExcecaoClienteDuplicado(cliente.getCpf());
+        
     }
 
     public Cliente pesquisarClientePeloCPF(String cpf){
