@@ -32,6 +32,7 @@ public class CompraService {
         for (Compra objetoCompra: listaCompras){
             if (objetoCompra.getCliente().getCpf().equalsIgnoreCase(cpf)){
                 listaCompras.add(objetoCompra);
+                return listaCompras;
             }
         }
 

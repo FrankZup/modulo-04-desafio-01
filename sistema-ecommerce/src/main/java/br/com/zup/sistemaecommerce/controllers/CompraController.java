@@ -49,7 +49,7 @@ public class CompraController {
     }
 
     @GetMapping("{cpf}/")
-    public List <Compra> listarComprasPorCliente(@PathVariable String cpf) {
+    public List<Compra> listarComprasPorCliente(@PathVariable String cpf) {
         return compraService.pesquisarCompraPeloCPFdoCliente(cpf);
     }
 
