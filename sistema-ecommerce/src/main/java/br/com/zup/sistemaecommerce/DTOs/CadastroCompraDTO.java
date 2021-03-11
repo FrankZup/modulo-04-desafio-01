@@ -30,7 +30,6 @@ public class CadastroCompraDTO {
     public Compra converterDTOparaCompra(Cliente cliente, List<Produto> listaProdutos){
         Compra compra = new Compra();
         compra.setCliente(cliente);
-        System.out.println(listaProdutos);
         compra.setListaDeProdutos(listaProdutos);
 
         return compra;
