@@ -1,4 +1,5 @@
 package br.com.zup.sistemaecommerce.services;
+import br.com.zup.sistemaecommerce.exceptions.ExcecaoClienteNaoEncontrado;
 import br.com.zup.sistemaecommerce.models.Cliente;
 import org.springframework.stereotype.Service;
 
@@ -35,7 +36,7 @@ public class ClienteService {
             }
         }
 
-        throw new RuntimeException("Cliente não encontrado!");
+        throw new ExcecaoClienteNaoEncontrado();
     }
 
     public Cliente pesquisarCliente(Cliente cliente){
