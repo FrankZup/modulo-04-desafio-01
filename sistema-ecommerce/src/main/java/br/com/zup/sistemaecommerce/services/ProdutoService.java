@@ -1,10 +1,9 @@
 package br.com.zup.sistemaecommerce.services;
 
-import br.com.zup.sistemaecommerce.DTOs.CadastroCompraDTO;
 import br.com.zup.sistemaecommerce.DTOs.CadastroProdutoDTO;
 import br.com.zup.sistemaecommerce.exceptions.ExcecaoProdutoDuplicado;
+import br.com.zup.sistemaecommerce.exceptions.ExcecaoProdutoNaoEncontrado;
 import br.com.zup.sistemaecommerce.exceptions.ExecaoProdutoEmFalta;
-import br.com.zup.sistemaecommerce.models.Compra;
 import br.com.zup.sistemaecommerce.models.Produto;
 import org.springframework.stereotype.Service;
 
@@ -48,7 +47,7 @@ public class ProdutoService {
             }
         }
 
-        throw new RuntimeException("Produto não encontrado");
+        throw new ExcecaoProdutoNaoEncontrado();
     }
 
     public Produto pesquisarProduto(Produto produto){
