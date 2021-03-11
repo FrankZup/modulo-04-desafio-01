@@ -28,7 +28,7 @@ public class ClienteService {
             return cliente;
         }
         throw new ExcecaoClienteDuplicado(cliente.getCpf());
-        
+
     }
 
     public Cliente pesquisarClientePeloCPF(String cpf){

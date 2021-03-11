@@ -1,5 +1,6 @@
 package br.com.zup.sistemaecommerce.services;
 
+import br.com.zup.sistemaecommerce.exceptions.ExcecaoCompraNaoFinalizada;
 import br.com.zup.sistemaecommerce.models.Compra;
 import org.springframework.stereotype.Service;
 
@@ -35,7 +36,7 @@ public class CompraService {
             }
         }
 
-        throw new RuntimeException("Compra não encontrada");
+        throw new ExcecaoCompraNaoFinalizada();
     }
 
 }
