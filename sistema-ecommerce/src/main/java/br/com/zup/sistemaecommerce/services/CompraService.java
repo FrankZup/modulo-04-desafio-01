@@ -1,13 +1,10 @@
 package br.com.zup.sistemaecommerce.services;
 
 import br.com.zup.sistemaecommerce.exceptions.ExcecaoCompraNaoFinalizada;
-import br.com.zup.sistemaecommerce.exceptions.ExcecaoListaDeProdutosVazia;
-import br.com.zup.sistemaecommerce.exceptions.ExcecaoProdutoNaoEncontrado;
 import br.com.zup.sistemaecommerce.models.Compra;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,11 +19,7 @@ public class CompraService {
 
     private List<Compra> listaCompras = new ArrayList<>();
 
-    public Compra registrarCompra(Compra compra){
-        if (listaCompras.isEmpty()){
-            throw new ExcecaoListaDeProdutosVazia();
-        }
-
+    public Compra registrarCompra(Compra compra) {
         listaCompras.add(compra);
         return compra;
     }
@@ -44,5 +37,6 @@ public class CompraService {
 
         throw new ExcecaoCompraNaoFinalizada();
     }
-
 }
+
+
