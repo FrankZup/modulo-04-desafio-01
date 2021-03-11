@@ -9,7 +9,7 @@ public class ExcecaoProdutoDuplicado extends Excecao {
     }
 
     public ExcecaoProdutoDuplicado(String nomeProduto) {
-        super("Produto "+nomeProduto+ " já cadastradp!", HttpStatus.BAD_REQUEST, "cliente");
+        super("Produto "+nomeProduto+ " já cadastrado!", HttpStatus.BAD_REQUEST, "cliente");
 
     }
 }
